@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Школа №77</title>
+</head>
+<body>
+    <div>
+        <h3>Ученики</h3>
+        <table>
+            <tr class="header">
+                <td><p>Имя ученика</p></td>
+                <td><p>Класс</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Students)
+            {
+                <tr>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.ClassName</p></td>
+                    <td><p><a href="/Home/Buy/@b.StudentId">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
